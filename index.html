@@ -8,10 +8,13 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-image: url("https://images.unsplash.com/photo-1501004318641-b39e6451bec6");
-  background-size: cover;
-  background-position: center;
   text-align: center;
+
+  /* FLORES GRANDES DE FUNDO */
+  background-image: url("https://images.unsplash.com/photo-1490750967868-88aa4486c946");
+  background-size: 1000px;
+  background-repeat: repeat;
+  background-position: center;
 }
 
 .caixa {
@@ -28,8 +31,22 @@ img {
   margin: 15px 0;
 }
 
+/* BOTÃO DE MÚSICA DISCRETO */
+#playMusic {
+  position: fixed;
+  bottom: 12px;
+  right: 12px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(194,24,91,0.85);
+  color: white;
+  font-size: 18px;
+}
+
 .botao {
-  margin-top: 20px;
+  margin-top: 18px;
   padding: 12px 24px;
   border-radius: 30px;
   border: none;
@@ -38,11 +55,8 @@ img {
   font-size: 16px;
 }
 
-#pagina2 { display: none; }
-
-.dica {
-  font-size: 14px;
-  opacity: 0.8;
+#pagina2 {
+  display: none;
 }
 </style>
 </head>
@@ -53,13 +67,14 @@ img {
   <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
 </audio>
 
+<button id="playMusic">🎵</button>
+
 <div id="principal" class="caixa">
   <h1>💖 Mãe, eu te amo com toda a minha vida 💖</h1>
 
   <img src="foto.jpg" alt="Nós dois">
 
   <p>Esse site é só para você, com todo meu amor 🌸</p>
-  <p class="dica">Toque uma vez na tela para ouvir a música 🎵</p>
 
   <button class="botao" onclick="mostrarMais()">💌 Ver mais mensagens</button>
 </div>
@@ -68,24 +83,17 @@ img {
   <h2>🌷 Mais mensagens 🌷</h2>
 
   <p>Mãe, você é meu maior exemplo.</p>
-  <p>Obrigado por tudo que você faz por mim.</p>
+  <p>Obrigado por todo amor, carinho e cuidado.</p>
   <p>Eu te amo mais do que palavras podem dizer ❤️</p>
 
   <button class="botao" onclick="voltar()">⬅ Voltar</button>
 </div>
 
 <script>
-let tocou = false;
-
-function tocarUmaVez() {
-  if (!tocou) {
-    document.getElementById("musica").play();
-    tocou = true;
-  }
-}
-
-document.addEventListener("click", tocarUmaVez, { once: true });
-document.addEventListener("touchstart", tocarUmaVez, { once: true });
+document.getElementById("playMusic").onclick = function() {
+  document.getElementById("musica").play();
+  this.style.display = "none";
+};
 
 function mostrarMais() {
   document.getElementById("principal").style.display = "none";
