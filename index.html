@@ -23,14 +23,14 @@ body {
 
 img {
   width: 90%;
-  max-width: 300px;
+  max-width: 320px;
   border-radius: 20px;
   margin: 15px 0;
 }
 
 .botao {
-  margin-top: 15px;
-  padding: 10px 20px;
+  margin-top: 20px;
+  padding: 12px 24px;
   border-radius: 30px;
   border: none;
   background: #c2185b;
@@ -46,42 +46,31 @@ img {
 
 <body>
 
+<audio id="musica" autoplay>
+  <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
+</audio>
+
 <div id="principal" class="caixa">
   <h1>💖 Mãe, eu te amo com toda a minha vida 💖</h1>
 
   <img src="foto.jpg">
 
-  <br>
-
-  <audio id="musica">
-    <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
-  </audio>
-
-  <button id="playMusic" class="botao">▶️ Tocar música</button>
-
-  <br><br>
+  <p>Esse site é só para você, com todo meu amor 🌸</p>
 
   <button class="botao" onclick="mostrarMais()">💌 Ver mais mensagens</button>
 </div>
 
 <div id="pagina2" class="caixa">
-  <h2>💗 Mais mensagens 💗</h2>
+  <h2>🌷 Mais mensagens 🌷</h2>
 
-  <p>Mãe, você é minha maior bênção.</p>
-  <p>Obrigado por todo amor e carinho.</p>
-  <p>Eu te amo mais do que palavras conseguem dizer 🌸</p>
+  <p>Mãe, você é meu maior exemplo.</p>
+  <p>Obrigado por tudo que você faz por mim.</p>
+  <p>Eu te amo mais do que palavras podem dizer ❤️</p>
 
   <button class="botao" onclick="voltar()">⬅ Voltar</button>
 </div>
 
 <script>
-document.getElementById("playMusic").onclick = function() {
-  document.getElementById("musica").play();
-  this.disabled = true;
-  this.innerText = "🎶 Música tocando";
-  this.style.opacity = "0.6";
-};
-
 function mostrarMais() {
   document.getElementById("principal").style.display = "none";
   document.getElementById("pagina2").style.display = "block";
