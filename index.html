@@ -5,6 +5,17 @@
 <title>Mãe, eu te amo</title>
 
 <style>
+    #playMusic {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #c2185b;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 18px;
+  font-size: 14px;
+    }
 body {
 background-image: url("https://images.unsplash.com/photo-1509042239860-f550ce710b93");
 background-repeat: no-repeat;
@@ -42,15 +53,19 @@ h1 {
 </div>
 
 </body>
-<audio id="musica" autoplay loop>
+    <audio id="musica" loop>
   <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
 </audio>
 
+<button id="playMusic">▶️ Tocar música</button>
+
 <script>
-  document.body.addEventListener('click', function () {
-    document.getElementById('musica').play();
-  }, { once: true });
+document.getElementById("playMusic").onclick = function() {
+  document.getElementById("musica").play();
+  this.style.display = "none";
+};
 </script>
 </html>
+
 
 
