@@ -15,7 +15,7 @@ body {
 }
 
 .caixa {
-  background: rgba(255,255,255,0.9);
+  background: rgba(255,255,255,0.92);
   margin: 20px;
   padding: 20px;
   border-radius: 20px;
@@ -38,24 +38,28 @@ img {
   font-size: 16px;
 }
 
-#pagina2 {
-  display: none;
+#pagina2 { display: none; }
+
+.dica {
+  font-size: 14px;
+  opacity: 0.8;
 }
 </style>
 </head>
 
 <body>
 
-<audio id="musica" autoplay>
+<audio id="musica">
   <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
 </audio>
 
 <div id="principal" class="caixa">
   <h1>💖 Mãe, eu te amo com toda a minha vida 💖</h1>
 
-  <img src="foto.jpg">
+  <img src="foto.jpg" alt="Nós dois">
 
   <p>Esse site é só para você, com todo meu amor 🌸</p>
+  <p class="dica">Toque uma vez na tela para ouvir a música 🎵</p>
 
   <button class="botao" onclick="mostrarMais()">💌 Ver mais mensagens</button>
 </div>
@@ -71,6 +75,18 @@ img {
 </div>
 
 <script>
+let tocou = false;
+
+function tocarUmaVez() {
+  if (!tocou) {
+    document.getElementById("musica").play();
+    tocou = true;
+  }
+}
+
+document.addEventListener("click", tocarUmaVez, { once: true });
+document.addEventListener("touchstart", tocarUmaVez, { once: true });
+
 function mostrarMais() {
   document.getElementById("principal").style.display = "none";
   document.getElementById("pagina2").style.display = "block";
