@@ -22,7 +22,7 @@ background-repeat: no-repeat;
 background-size: cover;
 background-position: center;
 }
-
+<button onclick="mostrarMais()">💌 Ver mais mensagens</button>
 .box {
     background: rgba(255,255,255,0.88);
     padding: 30px;
@@ -45,7 +45,29 @@ h1 {
 </style>
 
 </head>
+    <div id="pagina2" style="display:none; background:white; padding:20px; border-radius:20px; margin-top:20px;">
+  <h2>💖 Mais mensagens para você 💖</h2>
+
+  <p>Mãe, você é a pessoa mais importante da minha vida.</p>
+  <p>Obrigado por todo amor, carinho e cuidado.</p>
+  <p>Eu te amo mais do que palavras podem dizer 🌸</p>
+
+  <button onclick="voltar()">⬅ Voltar</button>
+</div>
+
+<script>
+function mostrarMais() {
+  document.getElementById("pagina2").style.display = "block";
+  document.getElementById("principal").style.display = "none";
+}
+
+function voltar() {
+  document.getElementById("pagina2").style.display = "none";
+  document.getElementById("principal").style.display = "block";
+}
+</script>
 <body>
+    <div id="principal">
 
 <div class="box">
     <img src="foto.jpg" alt="Nós dois">
@@ -66,6 +88,7 @@ document.getElementById("playMusic").onclick = function() {
 };
 </script>
 </html>
+
 
 
 
